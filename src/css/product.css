@@ -1,0 +1,25 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-image{
+    max-width: 50%;
+    height:auto;
+}
+.product-image img{
+    max-width: 100%;
+    height:auto;
+    border: 1px solid black;
+}
+.product-page{
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    text-align: center;
+    align-items: center;
+}
+.product-details{
+    width: 50%;
+    border: 1px solid black;
+}

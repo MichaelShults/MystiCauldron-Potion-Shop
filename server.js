@@ -4,8 +4,7 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-const indexRouter = require("./app/routes/IndexRouter");
-const authRouter = require("./app/routes/AuthRouter");
+
 
 
 app.set("view engine", "ejs");
@@ -15,10 +14,14 @@ app.use(express.static('src'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+const indexRouter = require("./app/routes/IndexRouter");
+const authRouter = require("./app/routes/AuthRouter");
+const productRouter = require("./app/routes/ProductRouter");
 
-app.get("/", (req, res) =>{
-    res.render("index", {items: [1, 2, 3]});
-});
+app.use("/", indexRouter);
+app.use("/", authRouter);
+app.use("/products/", productRouter);
+
 
 app.listen(port, () => {
     console.log(`listening to port ${port}`);
