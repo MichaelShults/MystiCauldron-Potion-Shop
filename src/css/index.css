@@ -1,6 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 h1{
-    color: red;
+    color: rgb(71, 52, 52);
+    text-decoration: underline;
+    text-decoration-color: #B19859;
 }
 p{
-    color: darkblue;
+    color: rgb(0, 0, 63);
 }
+body{
+    background:#f6f4f2;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+.product-image{
+    width: 100%;
+    height:auto;
+    box-sizing: border-box;
+    background-image: url("/images/gold_texture.jpg");
+    border-left: #8B4513 solid 1px;
+    border-right: #8B4513 solid 1px;
+    border-top: #8B4513 solid 1px;
+    box-sizing: border-box;
+
+}
+.product-image img{
+    max-width: 60%;
+    max-height: 60%;
+    width:60%;
+    height:auto;
+    z-index: 0;
+    position: relative;
+    border: darkgoldenrod solid 1px;
+    object-fit: cover;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    box-sizing: border-box;
+
+}
+.products-container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    margin: 0 35%; 
+  }
+.product-container{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    
+}
+.product-details{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -1px;
+    height: 100%;
+    border: #8B4513 solid 1px;
+
+}
+
+.header{
+    background:#eacfb4; 
+    max-width:100%;
+    width: 100%;
+    height:40%;
+    text-align: center;
+}
+.header-image{
+    max-width:100%;
+    height:90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    object-fit: cover;
+}
+
+hr {
+    border: none;
+    height: 1.5%;
+    background-color: #8B4513;
+    background-image: linear-gradient(to right, #8B4513, #D2691E, #8B4513);
+    margin-top: -1px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: relative;
+    transform-origin: center;
+  }
