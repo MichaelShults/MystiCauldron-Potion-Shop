@@ -1,16 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 body{
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 .product-image{
-    max-width: 50%;
+    max-width: 80%;
     height:auto;
+    margin-top: 6rem;
+    margin-bottom: 0;
 }
 .product-image img{
     max-width: 100%;
     height:auto;
-    border: 1px solid black;
+
 }
 .product-page{
     display: flex;
@@ -18,8 +28,53 @@ body{
     max-width: 40%;
     text-align: center;
     align-items: center;
+    margin-bottom: 3rem;
+
 }
 .product-details{
-    width: 50%;
-    border: 1px solid black;
+    display: flex;
+    top:1rem;
+}
+.back{
+    width: 100%;
+    height: 10rem;
+    align-items: center;
+    text-align: center;
+    margin-top: -4rem;
+    
+}
+.back-button{
+    background-color: antiquewhite;
+    padding-top: 5rem;
+    padding-bottom: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 5rem;
+    justify-content: center;
+}
+.header{
+  background-color: rgb(228, 213, 192);
+  height: 8rem;
+  padding:4rem;
+  padding-top: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  word-spacing: 0.2rem;
+
+}
+#product-description{
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    font-size: 3rem;
+}
+#product-price{
+    font-size: 2.4rem;
+    margin-top:-4rem;
+}
+#product-name{
+    font-size: 6rem;
+    margin-top: 1rem;
+    letter-spacing: 0.4em;
 }
