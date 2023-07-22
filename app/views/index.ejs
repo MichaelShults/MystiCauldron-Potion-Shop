@@ -1,26 +1,40 @@
 <html>
-    <head>
-        <title> Potions Shop </title>
-        <link rel="stylesheet" href="css/index.css">
-    </head>
-    <body>
-        <header class="header">
-            <img class ="header-image" src="..\images\header.png">
-        </header>
-        <hr>
-        <div class="products-container">
-            <% for(i =0; i< products.length; i++) {%>
-                <div class="product-container">
-                    <div class="product-image">
-                        <a href="\products\<%=i+1%>"><img src = "..\images\products\potions\<%= products[i].img_filename %>" /></a>
-                    </div>
-                    <div class="product-details">
-                        <a href="\products\<%=i+1%>"><h1><%= products[i].name %></h1></a>
-                        <p><%= products[i].description %></p>
+
+<head>
+    <title> Potions Shop </title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <img class="header-image" src="..\images\header.png">
+    </header>
+    <hr>
+    <div class="products-container">
+        <% for(i=0; i< products.length; i++) {%>
+            <div class="product-container">
+                <div class="product-image">
+                    <a href="\products\<%= i+1 %>">
+                        <img src="..\images\products\potions\<%= products[i].img_filename %>"></img>
+                    </a>
+                </div>
+                <div class="product-details-outer">
+                    <div class="product-details-inner">
+                        <a href="\products\<%=i+1%>">
+                            <h1>
+                                <%= products[i].name %>
+                            </h1>
+                        </a>
+                        <p>
+                            <%= products[i].description %>
+                        </p>
                         <p>Price: <%= products[i].price %>€</p>
                     </div>
                 </div>
+            </div>
+            <br>
             <% } %>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
