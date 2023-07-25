@@ -1,13 +1,14 @@
 const express = require("express");
 const path = require("path");
 const session = require('express-session');
+const ensureLoggedIn = require("connect-ensure-login").ensureLoggedIn;
 
 const app = express();
 const port = 3000;
 const passport = require("./app/controllers/AuthController").passport;
-const sqlite = require("sqlite3");
+const sqlite = require("better-sqlite3");
 const SqliteStore = require("better-sqlite3-session-store")(session);
-const sessionDB = new sqlite.Database("./app/database/sessionDB.db");
+const sessionDB = new sqlite("sessions.db", { verbose: console.log });
 
 
 
@@ -36,10 +37,11 @@ app.use(passport.authenticate("session"));
 const indexRouter = require("./app/routes/IndexRouter");
 const authRouter = require("./app/routes/AuthRouter");
 const productRouter = require("./app/routes/ProductRouter");
-
-app.use("/", indexRouter);
+const userRouter = require("./app/routes/UserRouter");
 app.use("/", authRouter);
+app.use("/", indexRouter);
 app.use("/products/", productRouter);
+app.use("/users", userRouter);
 
 
 app.listen(port, () => {

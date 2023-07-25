@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>
+        Panel
+    </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+        html{font-family: 'Roboto Slab', serif;}
+        #users-container
+        {
+            display: flexbox;
+            flex-direction: column;
+       
+        }
+        .user-container
+        {
+            display: grid;
+            grid-template-columns: auto auto;
+       
+        }
+        .panel{
+            display: flexbox;
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem;
+        }
+        .subpanel{
+            display: flex;
+        }
+        #del-user{
+            width:100%;
+            height:100%;
+            background-color: blanchedalmond;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <u> Number of users:<%= users.length %> </u>
+    <br>
+    <br>
+    <div id = "users-container">
+    <% for(i=0; i< users.length; i++) { %>
+    <div class ="user-container">
+        <div class="panel" style="border:1px solid black;">
+            <div class="subpanel">Id: <span style="font-size: 1.05em;"><%= users[i].id %></span></div>
+            <div class="subpanel">Username: <%= users[i].username %></div>
+        </div>
+        <div style="background-color: rgb(196, 215, 215);border: 1px solid black;" id = "del-user-button" class="panel">
+            <form id = "del-user-form" style="display:none;width:100%;height:100%;" method="post" action="../users/delete/<%= users[i].id %>"> <input id="del-user" type="submit" value="Delete User"> </form>
+        </div>
+        <br>
+    </div>
+    <% } %>
+    </div>
+    <br>
+    <br>
+</body>
+</html>

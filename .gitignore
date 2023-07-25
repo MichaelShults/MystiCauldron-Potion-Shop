@@ -1,3 +1,4 @@
 node_modules/
 app/database/dev.sqlite3
 migrations/
+*.db
